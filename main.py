@@ -1,15 +1,15 @@
-from  wumpus_agent import Wumpus_Q_Learning
+from wumpus_agent import WumpusQLearning
 
 ENVIRONMENT_ROWS = 4
 ENVIRONMENT_COLUMNS = 4
 
-START_PONIT = (0 , 0)
+START_PONIT = (0, 0)
 
-PITS = [ (0 , 2) , (1 ,3) , (2 , 0) , (3 , 2) ]
+PITS = [(0, 2), (1, 3), (2, 0), (3, 2)]
 
-WUMPUS = (2 , 1)
+WUMPUS = (2, 1)
 
-GOLD = (3 ,3)
+GOLD = (3, 3)
 
 EPISODES = 500
 
@@ -20,8 +20,8 @@ DISCOUNT_FACTOR = 0.9
 LEARNING_RATE = 0.8
 
 
-wumpus_agent = Wumpus_Q_Learning(ENVIRONMENT_ROWS, ENVIRONMENT_COLUMNS,START_PONIT,PITS,WUMPUS ,GOLD ,\
-     EPISODES , EPSILON, DISCOUNT_FACTOR ,LEARNING_RATE)
+wumpus_agent = WumpusQLearning(ENVIRONMENT_ROWS, ENVIRONMENT_COLUMNS, START_PONIT, PITS, WUMPUS, GOLD,
+                                 EPISODES, EPSILON, DISCOUNT_FACTOR, LEARNING_RATE)
 
 
 wumpus_agent.initialization()
