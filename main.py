@@ -1,0 +1,37 @@
+from  wumpus_agent import Wumpus_Q_Learning
+
+ENVIRONMENT_ROWS = 4
+ENVIRONMENT_COLUMNS = 4
+
+START_PONIT = (0 , 0)
+
+PITS = [ (0 , 2) , (1 ,3) , (2 , 0) , (3 , 2) ]
+
+WUMPUS = (2 , 1)
+
+GOLD = (3 ,3)
+
+EPISODES = 500
+
+EPSILON = 0.5
+
+DISCOUNT_FACTOR = 0.9
+
+LEARNING_RATE = 0.8
+
+
+wumpus_agent = Wumpus_Q_Learning(ENVIRONMENT_ROWS, ENVIRONMENT_COLUMNS,START_PONIT,PITS,WUMPUS ,GOLD ,\
+     EPISODES , EPSILON, DISCOUNT_FACTOR ,LEARNING_RATE)
+
+
+wumpus_agent.initialization()
+
+print(wumpus_agent.rewards)
+
+wumpus_agent.training()
+
+print('Training Finished!!!')
+
+print("Path to hunt GOLD!!! : ")
+
+print(*wumpus_agent.get_path(START_PONIT))
